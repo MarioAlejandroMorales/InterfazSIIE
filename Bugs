@@ -1,0 +1,2 @@
+1.- Al iniciar sesion e intercalar entre sesiones (2 veces) el tercer inicio no muestra nombre de usuario. (SOLUCIONADO)
+2.- Despues de cerrar sesion del bug 1, no deja iniciar sesion, marca contraseña incorrecta. (SOLUCIONADO)
