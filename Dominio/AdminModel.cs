@@ -7,12 +7,17 @@ namespace Dominio
 {
     public class AdminModel:ConexionSQL
     {
-        AdminSql admSql = new AdminSql();
-        RegistroSql registroSql = new RegistroSql();
+        public List<List<string>> getReg()
+        {
+            RegistroSql registroSql = new RegistroSql();
+            return registroSql.getRegistros();
+        }
         public void addU(int rol, List<string> dtU)
         {
-            if(admSql.addUser(rol, dtU))
+            AdminSql admSql = new AdminSql();
+            if (admSql.addUser(rol, dtU))
             {
+                RegistroSql registroSql = new RegistroSql();
                 string query = "SELECT * FROM ";
                 if (rol == 1)
                     query += "Coordinadores WHERE idCoordinador='";
@@ -28,14 +33,18 @@ namespace Dominio
         }
         public List<string> searchUser(string arg, int tipo, string arg2 = "")
         {
+            AdminSql admSql = new AdminSql();
             if (tipo==1)
                 return admSql.searchUserId(arg);
             return new List<string>();
         }
         public bool delU(string id, string rol)
         {
+            RegistroSql registroSql = new RegistroSql();
+            AdminSql admSql = new AdminSql();
             bool resultado = admSql.deleteUser(id, rol);
-            registroSql.addRegistro(Common.Cache.UserLoginCache.IdUser, "Eliminacion de usuario " + id + " Con rol " + rol.ToString(), "");
+            if (resultado)
+                registroSql.addRegistro(Common.Cache.UserLoginCache.IdUser, "Eliminacion de usuario " + id + " Con rol " + rol.ToString(), "");
             return resultado;
 
         }
