@@ -111,7 +111,7 @@ namespace Interfaces
             dtG.Add(dias);
             string idG=coordiModel.agregarGrupo(dtG);
             if (idG!="-1" && idG!="0")
-                MessageBox.Show("Grupo agregado satisfactoriamente./nEl id del grupo es:"+idG+" ", "Grupos");
+                MessageBox.Show("Grupo agregado satisfactoriamente.\nEl id del grupo es:"+idG+" ", "Grupos");
         }
 
         private void buttonBusca_Click(object sender, EventArgs e)

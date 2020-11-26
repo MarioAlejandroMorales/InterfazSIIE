@@ -33,9 +33,9 @@ namespace AccesoDatos
             
             return flag;
         }
-        public bool searchCalifi(string codigo, string materia)
+        public string searchCalifi(string codigo, string materia)
         {
-            bool flag = false;
+            string flag = "-1";
             string query = "SELECT * FROM Calificaciones WHERE idAlumno='" + codigo + "' AND idMateria='" + materia + "'";
             var connection = GetConnection();
             
@@ -46,7 +46,7 @@ namespace AccesoDatos
                 connection.Open();
                 MySqlDataReader reader = commandDatabase.ExecuteReader();
                 if (reader.Read())
-                    flag = true;
+                    flag = reader["calificacion"].ToString();
                 Console.WriteLine(query);
                 connection.Close();
             }

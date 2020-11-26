@@ -69,7 +69,13 @@ namespace Interfaces
         private void button2_Click(object sender, EventArgs e)
         {
             AlumnModel alumnModel = new AlumnModel();
-            alumnModel.addMateria(textBoxGrupo.Text);
+            string msg = "Ha ocurrido un problema al agendar";
+            if (alumnModel.addMateria(textBoxGrupo.Text))
+                msg = "La materia ha sido agendada exitosamente";
+            MessageBox.Show(msg, "Agenda");
+
+            
+            
         }
     }
 }

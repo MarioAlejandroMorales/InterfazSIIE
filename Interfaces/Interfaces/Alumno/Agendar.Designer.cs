@@ -49,10 +49,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 29);
+            this.label1.Size = new System.Drawing.Size(114, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "REGISTRO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -62,16 +61,18 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBoxMateria);
-            this.panel1.Location = new System.Drawing.Point(50, 100);
+            this.panel1.Location = new System.Drawing.Point(38, 81);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(638, 505);
+            this.panel1.Size = new System.Drawing.Size(478, 410);
             this.panel1.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(92, 102);
+            this.button1.Location = new System.Drawing.Point(69, 83);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 30);
+            this.button1.Size = new System.Drawing.Size(95, 24);
             this.button1.TabIndex = 2;
             this.button1.Text = "Buscar grupos";
             this.button1.UseVisualStyleBackColor = true;
@@ -80,17 +81,19 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 74);
+            this.label2.Location = new System.Drawing.Point(22, 60);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 17);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo:";
             // 
             // textBoxMateria
             // 
-            this.textBoxMateria.Location = new System.Drawing.Point(92, 74);
+            this.textBoxMateria.Location = new System.Drawing.Point(69, 60);
+            this.textBoxMateria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxMateria.Name = "textBoxMateria";
-            this.textBoxMateria.Size = new System.Drawing.Size(158, 22);
+            this.textBoxMateria.Size = new System.Drawing.Size(120, 20);
             this.textBoxMateria.TabIndex = 0;
             // 
             // panel2
@@ -100,24 +103,27 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.labelGrupo);
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(50, 100);
+            this.panel2.Location = new System.Drawing.Point(38, 81);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1051, 505);
+            this.panel2.Size = new System.Drawing.Size(788, 410);
             this.panel2.TabIndex = 4;
             this.panel2.Visible = false;
             // 
             // textBoxGrupo
             // 
-            this.textBoxGrupo.Location = new System.Drawing.Point(158, 290);
+            this.textBoxGrupo.Location = new System.Drawing.Point(118, 236);
+            this.textBoxGrupo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxGrupo.Name = "textBoxGrupo";
-            this.textBoxGrupo.Size = new System.Drawing.Size(156, 22);
+            this.textBoxGrupo.Size = new System.Drawing.Size(118, 20);
             this.textBoxGrupo.TabIndex = 7;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(158, 338);
+            this.button2.Location = new System.Drawing.Point(118, 275);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 28);
+            this.button2.Size = new System.Drawing.Size(77, 23);
             this.button2.TabIndex = 6;
             this.button2.Text = "Agendar";
             this.button2.UseVisualStyleBackColor = true;
@@ -126,18 +132,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 290);
+            this.label3.Location = new System.Drawing.Point(22, 236);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 17);
+            this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Codigo de grupo: ";
             // 
             // labelGrupo
             // 
             this.labelGrupo.AutoSize = true;
-            this.labelGrupo.Location = new System.Drawing.Point(30, 30);
+            this.labelGrupo.Location = new System.Drawing.Point(22, 24);
+            this.labelGrupo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelGrupo.Name = "labelGrupo";
-            this.labelGrupo.Size = new System.Drawing.Size(92, 17);
+            this.labelGrupo.Size = new System.Drawing.Size(68, 13);
             this.labelGrupo.TabIndex = 4;
             this.labelGrupo.Text = "Grupos para:";
             // 
@@ -158,24 +166,24 @@
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView1.Enabled = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 50);
+            this.dataGridView1.Location = new System.Drawing.Point(25, 41);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(988, 225);
+            this.dataGridView1.Size = new System.Drawing.Size(741, 183);
             this.dataGridView1.TabIndex = 3;
             // 
             // Agendar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 658);
+            this.ClientSize = new System.Drawing.Size(864, 535);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Agendar";
             this.Text = "Agendar";
             this.panel1.ResumeLayout(false);

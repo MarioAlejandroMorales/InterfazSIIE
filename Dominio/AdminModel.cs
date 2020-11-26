@@ -8,6 +8,7 @@ namespace Dominio
     public class AdminModel:ConexionSQL
     {
         AdminSql admSql = new AdminSql();
+        RegistroSql registroSql = new RegistroSql();
         public void addU(int rol, List<string> dtU)
         {
             if(admSql.addUser(rol, dtU))
@@ -22,6 +23,7 @@ namespace Dominio
 
                 query += UserLoginCache.IdUser + "'";
                 //userDao.onLogon(query);
+                registroSql.addRegistro(Common.Cache.UserLoginCache.IdUser, "Creacion de usuario" + admSql.getIdGlobal() + " Con rol " + rol.ToString(), "" );
             }
         }
         public List<string> searchUser(string arg, int tipo, string arg2 = "")
@@ -32,7 +34,10 @@ namespace Dominio
         }
         public bool delU(string id, string rol)
         {
-            return admSql.deleteUser(id, rol);
+            bool resultado = admSql.deleteUser(id, rol);
+            registroSql.addRegistro(Common.Cache.UserLoginCache.IdUser, "Eliminacion de usuario " + id + " Con rol " + rol.ToString(), "");
+            return resultado;
+
         }
     }
 }

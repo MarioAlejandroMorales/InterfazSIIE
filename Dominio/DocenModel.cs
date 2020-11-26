@@ -11,6 +11,7 @@ namespace Dominio
 {
     public class DocenModel : ConexionSQL
     {
+        RegistroSql registroSql = new RegistroSql();
         MateriaSql matSql = new MateriaSql();
         GrupoSql grupoSql = new GrupoSql();
         GpAlumnSql gpAlumnSql = new GpAlumnSql();
@@ -44,10 +45,19 @@ namespace Dominio
             {
                 if (gpAlumnSql.alumnoCursa(arg1, arg2))
                 {
-                    if (calificacionesSql.searchCalifi(arg2, materia))
+                    string calificacion = calificacionesSql.searchCalifi(arg2, materia);
+                    if (calificacion != "-1")
+                    {
+                        registroSql.addRegistro(Common.Cache.UserLoginCache.IdUser, "Se actualizo la calificacion del alumno " + arg2 + " En la materia " + materia + " Con calificacion: " + arg3, calificacion);
                         calificacionesSql.updateCalifi(arg2, materia, Common.Cache.UserLoginCache.IdUser, arg3);
+
+                    }
+                        
                     else
+                    {
+                        registroSql.addRegistro(Common.Cache.UserLoginCache.IdUser, "Registro de calificacion del alumno " + arg2 + " En la materia " + materia + " Con calificacion: " + arg3, "");
                         calificacionesSql.addCalifi(arg2, materia, Common.Cache.UserLoginCache.IdUser, arg3);
+                    }
                     return true;
                 }
 

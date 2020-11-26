@@ -10,6 +10,7 @@ namespace Dominio
 {
     public class AlumnModel:ConexionSQL
     {
+        RegistroSql registroSql = new RegistroSql();
         public List<List<string>> horarioAlumno(string arg)
         {
             GpAlumnSql gpAlumnSql = new GpAlumnSql();
@@ -35,7 +36,10 @@ namespace Dominio
         public bool addMateria(string arg)
         {
             GpAlumnSql gpAlumnSql = new GpAlumnSql();
-            return gpAlumnSql.registrarMateria(arg, Common.Cache.UserLoginCache.IdUser);             
+            bool resultado = gpAlumnSql.registrarMateria(arg, Common.Cache.UserLoginCache.IdUser);
+            if(resultado)
+                registroSql.addRegistro(Common.Cache.UserLoginCache.IdUser, "El alumno se ha registrado en el grupo " + arg  , "");
+            return resultado;
         }
         public List<List<string>> getKardex(string arg)
         {

@@ -35,6 +35,11 @@ namespace AccesoDatos
 {
     public class AdminSql : ConexionSQL
     {
+        string idGlobal = "";
+        public string getIdGlobal()
+        {
+            return idGlobal;
+        }
         public bool addUser(int rol, List<string> dtU)
         {
             string id="";
@@ -70,7 +75,7 @@ namespace AccesoDatos
             }
             catch (Exception ex) { Console.WriteLine(ex); }
             connection.Close();
-
+            idGlobal = id;
             if (rol == 1)
             {
                 query = "INSERT INTO Coordinadores(idCoordinador, nombre, apellido1, apellido2, carrera, correo)";

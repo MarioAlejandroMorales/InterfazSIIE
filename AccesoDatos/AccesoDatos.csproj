@@ -53,6 +53,7 @@
     <Compile Include="SqlServer\ConexionSQL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServer\MateriaSql.cs" />
+    <Compile Include="SqlServer\RegistroSql.cs" />
     <Compile Include="SqlServer\UserData.cs" />
   </ItemGroup>
   <ItemGroup>
