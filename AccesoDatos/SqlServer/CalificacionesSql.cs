@@ -97,13 +97,38 @@ namespace AccesoDatos
                 Console.WriteLine(query);
             }
             catch (Exception ex)
-            {
-                flag = "-1";
-                Console.WriteLine(ex);
-            }
+            { flag = "-1"; }
             connection.Close();
 
             return flag;
+        }
+        public List<List<string>> getKardex(string id)
+        {
+            List<List<string>> kL= new List<List<string>>();
+            List<string> kL1 = new List<string>();
+            string query = "SELECT* FROM Calificaciones WHERE idAlumno ='" + id + "'";
+            var connection = GetConnection();
+
+            MySqlCommand commandDatabase = new MySqlCommand(query, connection);
+            commandDatabase.CommandTimeout = 60;
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = commandDatabase.ExecuteReader();
+                while (reader.Read())
+                {
+                    kL1 = new List<string>();
+                    kL1.Add(reader["idDocente"].ToString());
+                    kL1.Add(reader["idMateria"].ToString());
+                    kL1.Add(reader["calificacion"].ToString());
+                    kL.Add(kL1);
+                }
+                connection.Close();
+            }
+            catch (Exception ex) { }
+            connection.Close();
+
+            return kL;
         }
 
     }

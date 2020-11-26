@@ -10,13 +10,10 @@ namespace Dominio
 {
     public class AlumnModel:ConexionSQL
     {
-        GpAlumnSql gpAlumnSql = new GpAlumnSql();
-
-        MateriaSql matSql = new MateriaSql();
-        GrupoSql grupoSql = new GrupoSql();
-
         public List<List<string>> horarioAlumno(string arg)
         {
+            GpAlumnSql gpAlumnSql = new GpAlumnSql();
+            MateriaSql matSql = new MateriaSql();
             List<List<string>> dtG = gpAlumnSql.horarioDocente(arg);
 
             if (dtG.Count() > 0)
@@ -26,6 +23,8 @@ namespace Dominio
         }
         public List<List<string>> getGrupos(string arg)
         {
+            GrupoSql grupoSql = new GrupoSql();
+            MateriaSql matSql = new MateriaSql();
             List<List<string>> dtG = grupoSql.gruposMateria(arg);
 
             if (dtG.Count() > 0)
@@ -33,9 +32,26 @@ namespace Dominio
                     grupo[4] = matSql.getNombreId(grupo[4]);
             return dtG;
         }
-        public string addMateria(string arg)
+        public bool addMateria(string arg)
         {
+            GpAlumnSql gpAlumnSql = new GpAlumnSql();
             return gpAlumnSql.registrarMateria(arg, Common.Cache.UserLoginCache.IdUser);             
+        }
+        public List<List<string>> getKardex(string arg)
+        {
+            MateriaSql matSql = new MateriaSql();
+            CalificacionesSql calificacionesSql= new CalificacionesSql();
+            DocenteSql docenteSql = new DocenteSql();
+            List<List<string>> dtC= calificacionesSql.getKardex(arg);
+            if (dtC.Count() > 0)
+                foreach (List<string> cali in dtC)
+                    cali[1] = matSql.getNombreId(cali[1]);
+
+            if (dtC.Count() > 0)
+                foreach (List<string> cali in dtC)
+                    cali[0] = docenteSql.getNombre(cali[0]);
+            return dtC;
+
         }
     }
 }

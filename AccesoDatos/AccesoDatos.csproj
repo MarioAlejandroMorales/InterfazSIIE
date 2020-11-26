@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SqlServer\DocenteSql.cs" />
     <Compile Include="SqlServer\AlumnoSql.cs" />
     <Compile Include="SqlServer\CalificacionesSql.cs" />
     <Compile Include="SqlServer\GpAlumnSql.cs" />

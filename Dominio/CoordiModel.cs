@@ -30,6 +30,16 @@ namespace Dominio
             GrupoSql grupoSql = new GrupoSql();
             return grupoSql.addGrupo(args);
         }
+        public bool addMateria(string arg1,string arg2)
+        {
+            GpAlumnSql gpAlumnSql = new GpAlumnSql();
+            return gpAlumnSql.registrarMateria(arg1, arg2);
+        }
+        public bool removeMateria(string arg1, string arg2)
+        {
+            GpAlumnSql gpAlumnSql = new GpAlumnSql();
+            return gpAlumnSql.removeMateria(arg1, arg2);
+        }
         public List<string> buscarGrupo(string arg)
         {
             GrupoSql grupoSql = new GrupoSql();

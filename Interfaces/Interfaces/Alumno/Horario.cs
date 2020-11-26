@@ -31,6 +31,7 @@ namespace Interfaces
             if (dtG.Count() > 0)
             {
                 tablaDatos = new DataTable();
+                tablaDatos.Columns.Add("Id");
                 tablaDatos.Columns.Add("Materia");
                 tablaDatos.Columns.Add("Aula");
                 tablaDatos.Columns.Add("Hora entrada");
@@ -40,6 +41,8 @@ namespace Interfaces
                 foreach (List<string> grupo in dtG)
                 {
                     DataRow fila = tablaDatos.NewRow();
+                    
+                    fila["Id"] = grupo[5];
                     fila["Materia"] = grupo[2];
                     fila["Aula"] = grupo[4];
                     fila["Hora entrada"] = grupo[0];

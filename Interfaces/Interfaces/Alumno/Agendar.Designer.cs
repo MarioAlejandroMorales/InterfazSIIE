@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxMateria = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxMateria = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.labelGrupo = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.textBoxGrupo = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelGrupo = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -67,12 +67,15 @@
             this.panel1.Size = new System.Drawing.Size(638, 505);
             this.panel1.TabIndex = 3;
             // 
-            // textBoxMateria
+            // button1
             // 
-            this.textBoxMateria.Location = new System.Drawing.Point(92, 74);
-            this.textBoxMateria.Name = "textBoxMateria";
-            this.textBoxMateria.Size = new System.Drawing.Size(158, 22);
-            this.textBoxMateria.TabIndex = 0;
+            this.button1.Location = new System.Drawing.Point(92, 102);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 30);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Buscar grupos";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -83,15 +86,12 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo:";
             // 
-            // button1
+            // textBoxMateria
             // 
-            this.button1.Location = new System.Drawing.Point(92, 102);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 30);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Buscar grupos";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.textBoxMateria.Location = new System.Drawing.Point(92, 74);
+            this.textBoxMateria.Name = "textBoxMateria";
+            this.textBoxMateria.Size = new System.Drawing.Size(158, 22);
+            this.textBoxMateria.TabIndex = 0;
             // 
             // panel2
             // 
@@ -106,48 +106,12 @@
             this.panel2.TabIndex = 4;
             this.panel2.Visible = false;
             // 
-            // dataGridView1
+            // textBoxGrupo
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView1.Enabled = false;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 50);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(988, 225);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // labelGrupo
-            // 
-            this.labelGrupo.AutoSize = true;
-            this.labelGrupo.Location = new System.Drawing.Point(30, 30);
-            this.labelGrupo.Name = "labelGrupo";
-            this.labelGrupo.Size = new System.Drawing.Size(92, 17);
-            this.labelGrupo.TabIndex = 4;
-            this.labelGrupo.Text = "Grupos para:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 290);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Codigo de grupo: ";
+            this.textBoxGrupo.Location = new System.Drawing.Point(158, 290);
+            this.textBoxGrupo.Name = "textBoxGrupo";
+            this.textBoxGrupo.Size = new System.Drawing.Size(156, 22);
+            this.textBoxGrupo.TabIndex = 7;
             // 
             // button2
             // 
@@ -159,12 +123,48 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBoxGrupo
+            // label3
             // 
-            this.textBoxGrupo.Location = new System.Drawing.Point(158, 290);
-            this.textBoxGrupo.Name = "textBoxGrupo";
-            this.textBoxGrupo.Size = new System.Drawing.Size(156, 22);
-            this.textBoxGrupo.TabIndex = 7;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(30, 290);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(121, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Codigo de grupo: ";
+            // 
+            // labelGrupo
+            // 
+            this.labelGrupo.AutoSize = true;
+            this.labelGrupo.Location = new System.Drawing.Point(30, 30);
+            this.labelGrupo.Name = "labelGrupo";
+            this.labelGrupo.Size = new System.Drawing.Size(92, 17);
+            this.labelGrupo.TabIndex = 4;
+            this.labelGrupo.Text = "Grupos para:";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataGridView1.Enabled = false;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.Location = new System.Drawing.Point(33, 50);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView1.Size = new System.Drawing.Size(988, 225);
+            this.dataGridView1.TabIndex = 3;
             // 
             // Agendar
             // 
@@ -172,10 +172,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1152, 658);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Agendar";
             this.Text = "Agendar";
             this.panel1.ResumeLayout(false);

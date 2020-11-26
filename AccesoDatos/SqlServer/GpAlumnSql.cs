@@ -128,12 +128,36 @@ namespace AccesoDatos
 
             return dtG;
         }
-        public string registrarMateria(string idGrupo, string idAlumno)
+        public bool findGrupoAlumn(string idGrupo, string idAlumno)
         {
-            string query = "INSERT INTO GrupoAlumnos(idGrupo, idAlumno)";
-            query += " VALUES('" + idGrupo + "','" + idAlumno + "')";
+            string query = "";
             var connection = GetConnection();
-            string flag = "0";
+            bool flag = false;
+            query = "SELECT * FROM GrupoAlumnos WHERE idGrupo='"+ idGrupo + "' AND idAlumno='" + idAlumno + "'";
+            MySqlCommand commandDatabase = new MySqlCommand(query, connection);
+            commandDatabase.CommandTimeout = 60;
+
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = commandDatabase.ExecuteReader();
+                if (reader.Read())
+                    flag = true;
+                connection.Close();
+            }
+            catch (Exception ex) { flag = false; }
+            connection.Close();
+
+            return flag;
+        }
+
+        public bool removeMateria(string idGrupo, string idAlumno)
+        {
+            if (findGrupoAlumn(idGrupo, idAlumno))
+                return false;
+            string query = "DELETE FROM GrupoAlumnos WHERE idGrupo='"+idGrupo+"' AND idAlumno='"+idAlumno+"'";
+            var connection = GetConnection();
+            bool flag = true;
             MySqlCommand commandDatabase = new MySqlCommand(query, connection);
             commandDatabase.CommandTimeout = 60;
             try
@@ -141,7 +165,27 @@ namespace AccesoDatos
                 connection.Open();
                 commandDatabase.ExecuteNonQuery();
             }
-            catch (Exception ex) { flag = "-1"; }
+            catch (Exception ex) { flag = false; }
+            connection.Close();
+
+            return flag;
+        }
+        public bool registrarMateria(string idGrupo, string idAlumno)
+        {
+            if (findGrupoAlumn(idGrupo, idAlumno))
+                return false;
+            string query = "INSERT INTO GrupoAlumnos(idGrupo, idAlumno)";
+            query += " VALUES('" + idGrupo + "','" + idAlumno + "')";
+            var connection = GetConnection();
+            bool flag = true;
+            MySqlCommand commandDatabase = new MySqlCommand(query, connection);
+            commandDatabase.CommandTimeout = 60;
+            try
+            {
+                connection.Open();
+                commandDatabase.ExecuteNonQuery();
+            }
+            catch (Exception ex) { flag = false; }
             connection.Close();
             
             return flag;
@@ -176,7 +220,8 @@ namespace AccesoDatos
                             dtG1.Add(reader["idMateria"].ToString());
                             dtG1.Add(reader["dia"].ToString());
                             dtG1.Add(reader["aula"].ToString());
-                            dtG.Add(new List<string> { dtG1[0], dtG1[1], dtG1[2], dtG1[3], dtG1[4] });
+                            dtG1.Add(reader["idGrupo"].ToString());
+                            dtG.Add(new List<string> { dtG1[0], dtG1[1], dtG1[2], dtG1[3], dtG1[4] , dtG1[5]});
                             dtG1.Clear();
                         }
                     }
